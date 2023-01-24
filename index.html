@@ -5,14 +5,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 
 <body>
-    <h1>Hola caracola</h1>
-    <h2> a ver, hoal</h2>
-    <p>asdasdaweqweqweqweqwa</p>
-    <p>Buenas tardes</p>
+
+    <!--Encabezado-->
+    <header>
+        <!--La # sustituirla posteriormente por enlace pantalla bienvenida-->
+        <a href="#" class="logo">
+            <img src="logo1.png" alt="logo pag web">
+            <h2 class="nombre-web">Emparejados</h2>
+        </a>
+        <nav>
+            <a href="" class="nav-link">Instrucciones</a>
+            <a href="" class="nav-link">Volumen</a>
+
+        </nav>
+    </header>
+
+
+
+    <!--Cartas-->
+    <div id="game-container">
+        <div id="game">
+            <div class="card" data-card="1">
+                <img class="front-face" src="path/to/image1-front.jpg" alt="card1 front" />
+                <img class="back-face" src="path/to/image1-back.jpg" alt="card1 back" />
+            </div>
+            <div class="card" data-card="2">
+                <img class="front-face"
+                    src="https://nuancier-ral.com/wp-content/uploads/2021/08/RAL-1011-Beige-brun-1.jpg"
+                    alt="card2 front" />
+                <img class="back-face"
+                    src="https://nuancier-ral.com/wp-content/uploads/2021/08/RAL-1011-Beige-brun-1.jpg"
+                    alt="card2 back" />
+            </div>
+            <div class="card" data-card="3">
+                <img class="front-face" src="path/to/image3-front.jpg" alt="card3 front" />
+                <img class="back-face" src="path/to/image3-back.jpg" alt="card3 back" />
+            </div>
+
+        </div>
+    </div>
+
+    <script src="index.js"></script>
 </body>
 
 </html>
