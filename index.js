@@ -1,57 +1,107 @@
-//Temporizador - Cuenta atrás:
-let isActive = false;
-let timeRemaining = 25 * 60 // =1500
-var xTimer;
-var audio = new Audio("alarm.mp3");
+// Inicializacion de variables
+let tarjetasDestapadas = 0;
+let tarjeta1 = null;
+let tarjeta2 = null;
+let primerResultado = null;
+let segundoResultado = null;
+let movimientos = 0;
+let aciertos = 0;
+let temporizador = false;
+let timer = 30;
+let timerInicial = 30;
+let tiempoRestanteId = null;
 
-function activateTimer() {
-    if (isActive) {
-        document.getElementById("btn-start").classList.remove("hidden");
-        document.getElementById("btn-stop").classList.add("hidden");
-        isActive = false;
-        clearInterval(xTimer);
-    } else {
-        document.getElementById("btn-stop").classList.remove("hidden");
-        document.getElementById("btn-start").classList.add("hidden");
-        isActive = true;
+// Apuntando a documento HTML
+let mostrarMovimientos = document.getElementById('movimientos');
+let mostrarAciertos = document.getElementById('aciertos');
+let mostrarTiempo = document.getElementById(`t-restante`);
 
-        startTimer();
+// Generacion de numeros aleatorios
+let numeros = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8];
+numeros = numeros.sort(() => { return Math.random() - 0.5 });
+console.log(numeros);
+
+
+function contarTiempo() {
+    tiempoRestanteId = setInterval(() => {
+        timer--;
+        mostrarTiempo.innerHTML = `Tiempo: ${timer} segundos`;
+        if (timer == 0) {
+            clearInterval(tiempoRestanteId);
+            bloquearTarjetas();
+        }
+    }, 1000);
+}
+
+function bloquearTarjetas() {
+    for (let i = 0; i <= 15; i++) {
+        let tarjetaBloqueada = document.getElementById(i);
+        tarjetaBloqueada.innerHTML = numeros[i];
+        tarjetaBloqueada.disabled = true;
     }
 }
 
-function startTimer() {
+// Funcion principal
+function destapar(id) {
 
-    xTimer = setInterval(function () {
-        timeRemaining--;
-        /*console.log(timeRemaining);
-        console.log("Minutos" + timeRemaining / 60);*/
+    if (temporizador == false) {
+        contarTiempo();
+        temporizador = true;
+    }
 
-        let minutes = Math.floor(timeRemaining / 60);
-        let seconds = timeRemaining % 60;
-        if (seconds < 10) {
-            seconds = "0" + seconds;
+
+    tarjetasDestapadas++;
+    console.log(tarjetasDestapadas);
+
+    if (tarjetasDestapadas == 1) {
+        // Mostrar primer numero
+        tarjeta1 = document.getElementById(id);
+        primerResultado = numeros[id]
+        tarjeta1.innerHTML = primerResultado;
+
+        //Deshabilitar primer boton
+        tarjeta1.disabled = true;
+    } else if (tarjetasDestapadas == 2) {
+        // Mostrar segundo numero
+        tarjeta2 = document.getElementById(id);
+        segundoResultado = numeros[id];
+        tarjeta2.innerHTML = segundoResultado;
+
+        // Desabilitar segundo boton
+        tarjeta2.disabled = true;
+
+        // Incrementar movimientos
+        movimientos++;
+        mostrarMovimientos.innerHTML = `Movimientos: ${movimientos}`;
+
+        if (primerResultado == segundoResultado) {
+            // Encerar Contador tarjetas destapadas
+            tarjetasDestapadas = 0;
+
+            // Aumentar aciertos
+            aciertos++
+            mostrarAciertos.innerHTML = `Aciertos: ${aciertos}`;
+
+            if (aciertos == 8) {
+                clearInterval(tiempoRestanteId);
+                mostrarAciertos.innerHTML = `Aciertos: ${aciertos} 😱 `
+                mostrarTiempo.innerHTML = `¡GENIAL! 🎉 Sólo tardaste ${timerInicial - timer} segundos`
+                mostrarMovimientos.innerHTML = `Movimientos: ${movimientos} 🤩`
+
+
+
+
+            }
+
+        } else {
+            // Mostrar momentaneamente valores y volver a tapar
+            setTimeout(() => {
+                tarjeta1.innerHTML = '';
+                tarjeta2.innerHTML = '';
+                tarjeta1.disabled = false;
+                tarjeta2.disabled = false;
+                tarjetasDestapadas = 0;
+            }, 800);
         }
-
-        let myTime = minutes + ":" + seconds;
-
-        if (timeRemaining <= 10) {
-            document.getElementById("timer").classList.replace("text-white", "text-red-500");
-        }
-
-        if (timeRemaining <= 0) {
-            audio.play();
-            clearInterval(xTimer);
-            timeRemaining = 25 * 60;
-            document.getElementById("timer").classList.replace("text-red-500", "text-white");
-            document.getElementById("timer").innerHTML = "25:00";
-            activateTimer();
-
-            setTimeout(function () {
-                audio.pause();
-            }, 20000);
-            return
-        }
-
-        document.getElementById("timer").innerHTML = myTime;
-    }, 1000);
+    }
 }
