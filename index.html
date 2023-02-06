@@ -19,15 +19,17 @@
             <h2 class="nombre-web">Emparejados</h2>
         </a>
         <nav>
-            <a href="" class="nav-link">Instrucciones</a>
-            <a href="" class="nav-link">Volumen</a>
-
+            <a href="#" class="nav-link" id="instructions">Instrucciones</a>
+            <a href="#" class="nav-link" id="volume-link">Volumen</a>
+            <div id="volume-control" style="display: none;">
+                <input type="range" id="volume" min="0" max="1" step="0.1" value="1">
+            </div>
         </nav>
     </header>
     <main>
         <!-- Emparejados -->
         <section class="section1">
-            <h1>Emparejados</h1>
+            <h1>LVL 1</h1>
             <table>
                 <tr>
                     <td><button id="0" onclick="destapar(0)"></button></td>
@@ -63,6 +65,10 @@
             <h2 id="aciertos" class="estadisticas">Aciertos: 0</h2>
             <h2 id="t-restante" class="estadisticas">Tiempo: 30 segundos</h2>
             <h2 id="movimientos" class="estadisticas">Movimientos: 0</h2>
+        </section>
+        <section class="section3">
+            <h2 id="aciertos" class="estadisticas">Nivel Anterior</h2>
+            <h2 id="movimientos" class="estadisticas">Siguiente Nivel</h2>
         </section>
     </main>
 
