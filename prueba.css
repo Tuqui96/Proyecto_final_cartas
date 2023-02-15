@@ -35,6 +35,7 @@ nav a {
     padding-right: 10px;
 }
 
+
 nav a:hover {
     background-image: linear-gradient(100deg, #84d0ff 0, #92cdff 5.56%, #a0caff 11.11%, #aec7ff 16.67%, #bbc4ff 22.22%, #c8c1ff 27.78%, #d4beff 33.33%, #dfbbff 38.89%, #e9b8f9 44.44%, #f2b5f2 50%, #fab3ea 55.56%, #ffb1e2 61.11%, #ffafd9 66.67%, #ffaed1 72.22%, #ffadc8 77.78%, #ffadbf 83.33%, #ffaeb6 88.89%, #ffafad 94.44%, #ffb1a5 100%);
     background-clip: text;
@@ -69,9 +70,15 @@ body {
 }
 
 main {
-    width: 730px;
+    max-width: 730px;
+    width: 100%;
     margin: 100px auto 50px;
+
+}
+
+#emparejados {
     display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
@@ -79,10 +86,8 @@ main {
     background-color: rgba(255, 255, 255, 0.2);
     padding: 0 10px 10px 10px;
     border-radius: 8px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    display: inline-block;
+    margin: 50px auto;
 }
 
 h1 {
@@ -113,14 +118,10 @@ button:hover {
     border-bottom-right-radius: 8px;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px; */
-    width: 1000px;
-    height: 80px;
+    max-width: 1000px;
+    width: 100%;
     padding: 0 20px;
-
-    position: absolute;
-    top: 120px;
-    left: 50%;
-    transform: translate(-50%, 0);
+    box-sizing: border-box;
 }
 
 
@@ -134,17 +135,15 @@ button:hover {
     border-bottom-right-radius: 8px;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px; */
-    width: 500px;
-    height: 80px;
+    max-width: 500px;
+    width: 100%;
     padding: 0 20px;
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
-    transform: translate(-50%, 0);
+
 }
 
 .estadisticas {
     border: 1px solid white;
+
     height: 45px;
     border-radius: 8px;
     padding: 8px 20px;
@@ -216,6 +215,22 @@ input[type="range"]::-webkit-slider-thumb {
     border: 2px solid rgb(218, 247, 166);
 
 }
+
+@media (max-width: 780px) {
+    .estadisticas {
+        width: 100%;
+        text-align: center;
+    }
+
+    .section1 {}
+}
+
+@media (max-width: 420px) {
+    button {
+        width: 80px;
+    }
+}
+
 
 /* input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;

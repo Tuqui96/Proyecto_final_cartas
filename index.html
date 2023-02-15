@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="prueba.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="home.css">
     <title>Document</title>
 </head>
 
@@ -18,7 +19,14 @@
             <img src="logo1.png" alt="logo pag web">
             <h2 class="nombre-web">Emparejados</h2>
         </a>
-        <nav>
+        <nav class="nav-main1">
+            <nav class="nav-main">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="game.html">Juego</a></li>
+                    <li><a href="Q&A.html">Q&A</a></li>
+                    <li><a href="us.html">Nosotros</a></li>
+            </nav>
             <a href="#" class="nav-link" id="instructions">Instrucciones</a>
             <a href="#" class="nav-link" id="volume-link">Volumen</a>
             <div id="volume-control" style="display: none;">
@@ -26,55 +34,9 @@
             </div>
         </nav>
     </header>
-    <main>
-        <!-- Emparejados -->
-        <section class="section1">
-            <h1>LVL 1</h1>
-            <table>
-                <tr>
-                    <td><button id="0" onclick="destapar(0)"></button></td>
-                    <td><button id="1" onclick="destapar(1)"></button></td>
-                    <td><button id="2" onclick="destapar(2)"></button></td>
-                    <td><button id="3" onclick="destapar(3)"></button></td>
-                </tr>
-
-                <tr>
-                    <td><button id="4" onclick="destapar(4)"></button></td>
-                    <td><button id="5" onclick="destapar(5)"></button></td>
-                    <td><button id="6" onclick="destapar(6)"></button></td>
-                    <td><button id="7" onclick="destapar(7)"></button></td>
-                </tr>
-
-                <tr>
-                    <td><button id="8" onclick="destapar(8)"></button></td>
-                    <td><button id="9" onclick="destapar(9)"></button></td>
-                    <td><button id="10" onclick="destapar(10)"></button></td>
-                    <td><button id="11" onclick="destapar(11)"></button></td>
-                </tr>
-
-                <tr>
-                    <td><button id="12" onclick="destapar(12)"></button></td>
-                    <td><button id="13" onclick="destapar(13)"></button></td>
-                    <td><button id="14" onclick="destapar(14)"></button></td>
-                    <td><button id="15" onclick="destapar(15)"></button></td>
-                </tr>
-            </table>
-        </section>
-        <!-- Temporizador puntuacion etc -->
-        <section class="section2">
-            <h2 id="aciertos" class="estadisticas">Aciertos: 0</h2>
-            <h2 id="t-restante" class="estadisticas">Tiempo: 30 segundos</h2>
-            <h2 id="movimientos" class="estadisticas">Movimientos: 0</h2>
-        </section>
-        <section class="section3">
-            <h2 id="aciertos" class="estadisticas">Nivel Anterior</h2>
-            <h2 id="movimientos" class="estadisticas">Siguiente Nivel</h2>
-        </section>
-    </main>
-
-
-
-    <script src="index.js"></script>
+    <h1>Hola soy home</h1>
+    <script src="index.js">
+    </script>
 </body>
 
 </html>

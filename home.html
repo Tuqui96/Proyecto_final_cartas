@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="home.css">
+
+    <title>Document</title>
+</head>
+
+<!--Encabezado-->
+<header>
+    <!--La # sustituirla posteriormente por enlace pantalla bienvenida-->
+    <a href="welcome.html" class="logo">
+        <img src="logo1.png" alt="logo pag web">
+        <h2 class="nombre-web">Emparejados</h2>
+    </a>
+    <nav class="nav-main1">
+        <nav class="nav-main">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="game.html">Juego</a></li>
+                <li><a href="Q&A.html">Q&A</a></li>
+                <li><a href="us.html">Nosotros</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="nav-link" id="instructions">Instrucciones</a>
+        <a href="#" class="nav-link" id="volume-link">Volumen</a>
+        <div id="volume-control" style="display: none;">
+            <input type="range" id="volume" min="0" max="1" step="0.1" value="1">
+        </div>
+    </nav>
+</header>
+
+<body>
+
+    <div class="container-form">
+        <h1 class="title-home">¡Bienvenidos!</h1>
+
+        <div class="create-nick">
+            <h2> Crea tu nickname</h2>
+        </div>
+
+        <input type="text" placeholder="Ingresa tu nickname">
+
+
+        <div class="star-btn">
+            <a href="game.html" class="sign-btn">Empieza a jugar</a>
+
+
+
+        </div>
+
+    </div>
+    <script src="index.js">
+    </script>
+</body>
+
+</html>

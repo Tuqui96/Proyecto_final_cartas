@@ -7,8 +7,7 @@ let segundoResultado = null;
 let movimientos = 0;
 let aciertos = 0;
 let temporizador = false;
-let timer = 30;
-let timerInicial = 30;
+
 let tiempoRestanteId = null;
 
 
@@ -29,17 +28,46 @@ let numeros = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8];
 numeros = numeros.sort(() => { return Math.random() - 0.5 });
 console.log(numeros);
 
+// let timer = 60;
+// let timerInicial = 60;
+// function contarTiempo() {
+//     tiempoRestanteId = setInterval(() => {
+//         timer--;
+//         mostrarTiempo.innerHTML = `Tiempo: ${timer} segundos`;
+//         if (timer == 0) {
+//             clearInterval(tiempoRestanteId);
+//             bloquearTarjetas(numeros);
+//             loseAudio.play();
+//         }
+//     }, 1000);
+// }
+
+let timer = 60;
+let timerInicial = 60;
+let tiemposPorNivel = [60, 45, 30, 15];
+let nivelActual = 0;
 
 function contarTiempo() {
+    timer
+    timerInicial
+    timer = tiemposPorNivel[nivelActual];
+    timerInicial = tiemposPorNivel[nivelActual];
+
     tiempoRestanteId = setInterval(() => {
         timer--;
         mostrarTiempo.innerHTML = `Tiempo: ${timer} segundos`;
-        if (timer == 0) {
+        if (timer <= 0) {
             clearInterval(tiempoRestanteId);
             bloquearTarjetas(numeros);
             loseAudio.play();
         }
     }, 1000);
+}
+
+function siguienteNivel() {
+    clearInterval(tiempoRestanteId);
+    nivelActual++;
+    contarTiempo();
 }
 
 function bloquearTarjetas() {

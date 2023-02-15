@@ -12,7 +12,9 @@ a {
 header {
     display: flex;
     min-height: 75px;
-    background-image: linear-gradient(to right, rgb(134, 239, 172), rgb(59, 130, 246), rgb(147, 51, 234));
+    /* background-image: linear-gradient(to right, rgb(134, 239, 172), rgb(59, 130, 246), rgb(147, 51, 234)); */
+    background-image: linear-gradient(to right top, rgb(139, 92, 246), rgb(253, 186, 116));
+
     justify-content: space-between;
     align-items: center;
     padding: 10px;
@@ -28,6 +30,51 @@ header {
     margin-right: 10px;
 }
 
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#instructions,
+#volume-link {
+    margin-left: 15px;
+}
+
+#volume-control {
+    margin-top: 10px;
+}
+
+
+
+.nav-main1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F2F2F2;
+    background-image: linear-gradient(100deg, #84d0ff 0, #92cdff 5.56%, #a0caff 11.11%, #aec7ff 16.67%, #bbc4ff 22.22%, #c8c1ff 27.78%, #d4beff 33.33%, #dfbbff 38.89%, #e9b8f9 44.44%, #f2b5f2 50%, #fab3ea 55.56%, #ffb1e2 61.11%, #ffafd9 66.67%, #ffaed1 72.22%, #ffadc8 77.78%, #ffadbf 83.33%, #ffaeb6 88.89%, #ffafad 94.44%, #ffb1a5 100%);
+    padding: 20px;
+
+    border-radius: 15px;
+
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav li:last-child {
+    margin-right: 0;
+}
+
 nav a {
     font-weight: 600;
     padding-right: 10px;
@@ -35,10 +82,13 @@ nav a {
 
 nav a:hover {
     background-image: linear-gradient(100deg, #84d0ff 0, #92cdff 5.56%, #a0caff 11.11%, #aec7ff 16.67%, #bbc4ff 22.22%, #c8c1ff 27.78%, #d4beff 33.33%, #dfbbff 38.89%, #e9b8f9 44.44%, #f2b5f2 50%, #fab3ea 55.56%, #ffb1e2 61.11%, #ffafd9 66.67%, #ffaed1 72.22%, #ffadc8 77.78%, #ffadbf 83.33%, #ffaeb6 88.89%, #ffafad 94.44%, #ffb1a5 100%);
+    background-clip: text;
     -webkit-background-clip: text;
+    -moz-background-clip: text;
     color: transparent;
 }
 
+/*Ajuste tamao pantalla head - aadirlo abajo del todo con todo el media! UNA VEZ FINALIZADO EL PROYECTO*/
 @media (max-width: 781px) {
     header {
         flex-direction: column;
@@ -50,3 +100,225 @@ nav a:hover {
 }
 
 /*Final header*/
+
+#game-container {
+    width: 600px;
+    margin: 0 auto;
+}
+
+body {
+    background: rgb(63, 94 251);
+    background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
+    font-family: sans-serif;
+    color: white;
+}
+
+main {
+    max-width: 730px;
+    width: 100%;
+    margin: 100px auto 50px;
+
+}
+
+#emparejados {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section1 {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 0 10px 10px 10px;
+    border-radius: 8px;
+    display: inline-block;
+    margin: 50px auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+
+
+button {
+    height: 100px;
+    width: 100px;
+    font-size: 40px;
+    color: black;
+    font-weight: bold;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+
+.section2 {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    /* border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px; */
+    max-width: 1000px;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+
+
+.section3 {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    /* border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px; */
+    max-width: 500px;
+    width: 100%;
+    padding: 0 20px;
+
+}
+
+.estadisticas {
+    border: 1px solid white;
+
+    height: 45px;
+    border-radius: 8px;
+    padding: 8px 20px;
+    box-sizing: border-box;
+}
+
+h2:first-of-type {
+    margin-right: auto;
+}
+
+h2:last-of-type {
+    margin-left: auto;
+}
+
+footer {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 80%;
+}
+
+
+
+/* input[type="range"] {
+    background-color: rgb(134, 239, 172);
+/* } */
+/* input[type="range"] {
+     -webkit-appearance: none; 
+    -webkit-appearance: none;
+    width: 100%;
+    height: 5px;
+    border-radius: 5px;
+    background: linear-gradient(to right, gray 0%, gray 50%, blue 50%, blue 100%); 
+    background-image: linear-gradient(100deg, #84d0ff 0, #92cdff 5.56%, #a0caff 11.11%, #aec7ff 16.67%, #bbc4ff 22.22%, #c8c1ff 27.78%, #d4beff 33.33%, #dfbbff 38.89%, #e9b8f9 44.44%, #f2b5f2 50%, #fab3ea 55.56%, #ffb1e2 61.11%, #ffafd9 66.67%, #ffaed1 72.22%, #ffadc8 77.78%, #ffadbf 83.33%, #ffaeb6 88.89%, #ffafad 94.44%, #ffb1a5 100%);
+    width: 100%;
+    height: 5px;
+    border-radius: 5px;
+}  */
+
+#volume-control {
+    display: flex;
+    flex-direction: column;
+    color: #9f0ecf;
+    padding-top: 10px;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 5px;
+    border-radius: 5px;
+    background: rgb(26, 188, 156);
+    /* background: linear-gradient(to right, #ffffff 0%, #0400e9 var(--value), #d9d9d9 var(--value), #d9d9d9 100%); */
+
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+
+    background-color: rgb(218, 247, 166);
+    border-radius: 50%;
+    border: 2px solid rgb(218, 247, 166);
+
+}
+
+@media (max-width: 780px) {
+    .estadisticas {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* .section1 {} */
+}
+
+@media (max-width: 420px) {
+    button {
+        width: 80px;
+    }
+}
+
+
+/* input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: rgb(1, 99, 245);
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+} */
+
+/* Esto modificarlo al final - diseo mvil!! */
+/* 
+@media (max-width: 780px) {
+    .section1 {
+        background-color: rgba(0, 0, 0, 0.2);
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        top: auto;
+        left: 0;
+        transform: none;
+    }
+
+    .section2 {
+        background-color: rgba(0, 0, 0, 0.2);
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        top: auto;
+        left: 0;
+        transform: none;
+    }
+
+    .section3 {
+        display: flex;
+        flex-wrap: wrap;
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+width: 500px;
+height: 80px;
+padding: 0 20px;
+position: absolute;
+bottom: 10%;
+left: 50%;
+transform: translate(-50%, 0);
+}
+}

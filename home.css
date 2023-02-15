@@ -1,0 +1,73 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+
+.container-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.title-home {
+    margin-top: 40px;
+}
+
+.create-nick {
+    margin-top: 100px;
+}
+
+.create-nick h2 {
+    margin-top: 50px;
+}
+
+input {
+    margin-top: 20px;
+}
+
+.star-btn {
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+}
+
+.sign-btn {
+    position: relative;
+    padding: 20px 50px;
+    background: #;
+    border-radius: 40px;
+    box-shadow: 0 0 0 0 rgba(145, 64, 248, 0.5), 0 0 0 0 rgba(39, 200, 255, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.sign-btn::after {
+    content: "";
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: -50px;
+    left: -100px;
+    background: #13ff13;
+    background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+    z-index: -1;
+    transition: transform 0.5s ease;
+}
+
+.sign-btn:hover {
+    transform: translate(0, -6px);
+    box-shadow: 10px -10px 25px 0 rgba(16, 226, 253, 0.5), -10px 10px 25px 0 rgba(183, 0, 255, 0.7);
+
+}
+
+.sign-btn:hover::after {
+    transform: rotate(150deg);
+}
+
+/* class message // title-home
+class create a count // crea tu nickname
