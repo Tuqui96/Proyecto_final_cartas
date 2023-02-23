@@ -25,9 +25,11 @@ header {
     align-items: center;
 }
 
+
 .logo img {
     height: 80px;
-    margin-right: 10px;
+
+    /* margin-right: 10px; */
 }
 
 nav ul {
@@ -38,13 +40,34 @@ nav ul {
 }
 
 #instructions,
+
 #volume-link {
-    margin-left: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#volume-link img {
+    max-height: 7.5%;
+    max-width: 7.5%;
+    transition: all 0.3s ease-in-out;
 }
 
 #volume-control {
-    margin-top: 10px;
+    position: absolute;
+    top: 5.8%;
+    left: 53%;
+    transform: translate(-50%, -50%);
 }
+
+#volume-link img:hover {
+    transform: scale(1.2);
+    /* Escala la imagen al 120% */
+}
+
+/* #volume-control {
+    margin-top: 10px;
+} */
 
 
 
@@ -52,7 +75,7 @@ nav ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    line-height: 1;
 }
 
 .nav-main {
@@ -116,7 +139,7 @@ body {
 main {
     max-width: 730px;
     width: 100%;
-    margin: 100px auto 50px;
+    margin: 50px auto 50px;
 
 }
 

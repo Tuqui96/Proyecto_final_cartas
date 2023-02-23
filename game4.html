@@ -12,20 +12,22 @@
 <!--Encabezado-->
 <header>
     <!--La # sustituirla posteriormente por enlace pantalla bienvenida-->
-    <a href="welcome.html" class="logo">
+    <a href="index.html" class="logo">
         <img src="logo1.png" alt="logo pag web">
         <h2 class="nombre-web">Emparejados</h2>
     </a>
     <nav class="nav-main1">
         <nav class="nav-main">
             <ul>
-                <li><a href="home.html">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="game.html">Juego</a></li>
                 <li><a href="Q&A.html">Q&A</a></li>
                 <li><a href="us.html">Nosotros</a></li>
             </ul>
         </nav>
-        <a href="#" class="nav-link" id="volume-link">Volumen</a>
+        <a class="nav-link" id="volume-link">
+            <img src="volumen.png" alt="icono volumen">
+        </a>
         <div id="volume-control" style="display: none;">
             <input type="range" id="volume" min="0" max="1" step="0.1" value="1">
         </div>
@@ -41,38 +43,37 @@
             <h2 id="t-restante" class="estadisticas">Tiempo: 45 segundos</h2>
             <h2 id="movimientos" class="estadisticas">Movimientos: 0</h2>
         </section>
-
         <!-- Emparejados -->
         <div id="emparejados">
             <section class="section1">
                 <h1>LVL 4</h1>
                 <table>
                     <tr>
-                        <td><button id="0" onclick="destapar(0)"></button></td>
-                        <td><button id="1" onclick="destapar(1)"></button></td>
-                        <td><button id="2" onclick="destapar(2)"></button></td>
-                        <td><button id="3" onclick="destapar(3)"></button></td>
+                        <td><button id="0" onclick="destapar(0, 45, 15)"></button></td>
+                        <td><button id="1" onclick="destapar(1, 45, 15)"></button></td>
+                        <td><button id="2" onclick="destapar(2, 45, 15)"></button></td>
+                        <td><button id="3" onclick="destapar(3, 45, 15)"></button></td>
                     </tr>
 
                     <tr>
-                        <td><button id="4" onclick="destapar(4)"></button></td>
-                        <td><button id="5" onclick="destapar(5)"></button></td>
-                        <td><button id="6" onclick="destapar(6)"></button></td>
-                        <td><button id="7" onclick="destapar(7)"></button></td>
+                        <td><button id="4" onclick="destapar(4, 45, 15)"></button></td>
+                        <td><button id="5" onclick="destapar(5, 45, 15)"></button></td>
+                        <td><button id="6" onclick="destapar(6, 45, 15)"></button></td>
+                        <td><button id="7" onclick="destapar(7, 45, 15)"></button></td>
                     </tr>
 
                     <tr>
-                        <td><button id="8" onclick="destapar(8)"></button></td>
-                        <td><button id="9" onclick="destapar(9)"></button></td>
-                        <td><button id="10" onclick="destapar(10)"></button></td>
-                        <td><button id="11" onclick="destapar(11)"></button></td>
+                        <td><button id="8" onclick="destapar(8, 45, 15)"></button></td>
+                        <td><button id="9" onclick="destapar(9, 45, 15)"></button></td>
+                        <td><button id="10" onclick="destapar(10, 45, 15)"></button></td>
+                        <td><button id="11" onclick="destapar(11, 45, 15)"></button></td>
                     </tr>
 
                     <tr>
-                        <td><button id="12" onclick="destapar(12)"></button></td>
-                        <td><button id="13" onclick="destapar(13)"></button></td>
-                        <td><button id="14" onclick="destapar(14)"></button></td>
-                        <td><button id="15" onclick="destapar(15)"></button></td>
+                        <td><button id="12" onclick="destapar(12, 45, 15)"></button></td>
+                        <td><button id="13" onclick="destapar(13, 45, 15)"></button></td>
+                        <td><button id="14" onclick="destapar(14, 45, 15)"></button></td>
+                        <td><button id="15" onclick="destapar(15, 45, 15)"></button></td>
                     </tr>
                 </table>
             </section>
@@ -87,7 +88,7 @@
 
 
 
-    <script src="index4.js"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>

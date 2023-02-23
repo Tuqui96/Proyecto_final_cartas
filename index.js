@@ -23,9 +23,11 @@ let clickAudio = new Audio('./sounds/click.mp3');
 let rightAudio = new Audio('./sounds/right.mp3');
 let wrongAudio = new Audio('./sounds/wrong.mp3');
 
+// 
 // Generacion de numeros aleatorios
-let numeros = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8];
-numeros = numeros.sort(() => { return Math.random() - 0.5 });
+let masterNumeros = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14, 14, 15, 15, 16, 16, 17, 17, 18, 18];
+let numeros = [];
+
 console.log(numeros);
 
 // let timer = 60;
@@ -47,9 +49,9 @@ let timerInicial = 150;
 // let tiemposPorNivel = [60, 45, 30, 15];
 // let nivelActual = 0;
 
-function contarTiempo(timer1) {
+function contarTiempo(timer1, cantidad) {
     timer = timer1;
-    timerInicial
+    timerInicial = timer1;
     // timer = tiemposPorNivel[nivelActual];
     // timerInicial = tiemposPorNivel[nivelActual];
 
@@ -57,8 +59,9 @@ function contarTiempo(timer1) {
         timer--;
         mostrarTiempo.innerHTML = `Tiempo: ${timer} segundos`;
         if (timer <= 0) {
+            console.log("llego aqui");
             clearInterval(tiempoRestanteId);
-            bloquearTarjetas(numeros);
+            bloquearTarjetas(numeros, cantidad);
             loseAudio.play();
         }
     }, 1000);
@@ -70,8 +73,8 @@ function siguienteNivel() {
     contarTiempo();
 }
 
-function bloquearTarjetas() {
-    for (let i = 0; i <= 15; i++) {
+function bloquearTarjetas(numeros, cantidad) {
+    for (let i = 0; i <= cantidad; i++) {
         let tarjetaBloqueada = document.getElementById(i);
         tarjetaBloqueada.innerHTML = `<img src="./images/${numeros[i]}.png">`;
         tarjetaBloqueada.disabled = true;
@@ -106,11 +109,17 @@ volumeSlider.addEventListener('input', function () {
     this.style.background = `linear-gradient(to right, rgb(26, 188, 156)  ${percentage}%, gray ${percentage}%)`;
 });
 
+let primeraVez = true;
 // Funcion principal
-function destapar(id, timer1) {
+function destapar(id, timer1, cantidad) {
+    if (primeraVez) {
+        numeros = masterNumeros.slice(0, cantidad + 1);
+        numeros = numeros.sort(() => { return Math.random() - 0.5 });
+        primeraVez = false;
+    }
 
     if (temporizador == false) {
-        contarTiempo(timer1);
+        contarTiempo(timer1, cantidad);
         temporizador = true;
     }
 
@@ -149,7 +158,7 @@ function destapar(id, timer1) {
             mostrarAciertos.innerHTML = `Aciertos: ${aciertos}`;
             rightAudio.play();
 
-            if (aciertos == 8) {
+            if (aciertos == (cantidad + 1) / 2) {
                 winAudio.play();
                 clearInterval(tiempoRestanteId);
                 mostrarAciertos.innerHTML = `Aciertos: ${aciertos} 😱 `

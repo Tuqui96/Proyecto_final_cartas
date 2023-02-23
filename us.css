@@ -23,6 +23,16 @@
     padding: 0 10px;
 }
 
+.mi-header a {
+    color: white;
+    text-decoration: none;
+}
+
+.mi-header h2 {
+    color: white;
+    text-decoration: none;
+}
+
 .col-lg-2 {
     flex: 0 0 auto;
     width: 32%;
@@ -64,6 +74,7 @@
 .textoh1:hover {
     color: #5d96ff;
 }
+
 
 .boxi {
     display: flex;
