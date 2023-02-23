@@ -1,5 +1,6 @@
 * {
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
+    box-sizing: content-box;
     text-decoration: none;
 }
 
@@ -12,15 +13,24 @@
     margin: 0 auto;
 }
 
+.box row {
+    margin-left: calc(-.0 * var(--bs-gutter-x));
+}
+
 .us-text {
     width: 600px;
     max-width: 100%;
     padding: 0 10px;
 }
 
+.col-lg-2 {
+    flex: 0 0 auto;
+    width: 32%;
+}
+
 .box {
     width: 1290px;
-    max-width: 95%;
+    /* max-width: 99%; */
     margin: 0 auto;
     display: flex;
     align-items: center;

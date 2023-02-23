@@ -42,13 +42,13 @@ console.log(numeros);
 //     }, 1000);
 // }
 
-let timer = 150;
-let timerInicial = 150;
-// let tiemposPorNivel = [60, 45, 30, 15];
-// let nivelActual = 0;
+let timer = 90;
+let timerInicial = 90;
+let tiemposPorNivel = [60, 45, 30, 15];
+let nivelActual = 0;
 
-function contarTiempo(timer1) {
-    timer = timer1;
+function contarTiempo() {
+    timer
     timerInicial
     // timer = tiemposPorNivel[nivelActual];
     // timerInicial = tiemposPorNivel[nivelActual];
@@ -64,17 +64,25 @@ function contarTiempo(timer1) {
     }, 1000);
 }
 
-function siguienteNivel() {
-    clearInterval(tiempoRestanteId);
-    nivelActual++;
-    contarTiempo();
-}
+// function siguienteNivel() {
+//     clearInterval(tiempoRestanteId);
+//     nivelActual++;
+//     contarTiempo();
+// }
 
 function bloquearTarjetas() {
+    shuffleArray(numeros); // Baraja el array "numeros"
     for (let i = 0; i <= 15; i++) {
         let tarjetaBloqueada = document.getElementById(i);
         tarjetaBloqueada.innerHTML = `<img src="./images/${numeros[i]}.png">`;
         tarjetaBloqueada.disabled = true;
+    }
+}
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
     }
 }
 let volumeControl = document.getElementById("volume");
@@ -107,10 +115,10 @@ volumeSlider.addEventListener('input', function () {
 });
 
 // Funcion principal
-function destapar(id, timer1) {
+function destapar(id) {
 
     if (temporizador == false) {
-        contarTiempo(timer1);
+        contarTiempo();
         temporizador = true;
     }
 

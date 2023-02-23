@@ -42,13 +42,13 @@ console.log(numeros);
 //     }, 1000);
 // }
 
-let timer = 150;
-let timerInicial = 150;
-// let tiemposPorNivel = [60, 45, 30, 15];
-// let nivelActual = 0;
+let timer = 60;
+let timerInicial = 60;
+let tiemposPorNivel = [60, 45, 30, 15];
+let nivelActual = 0;
 
-function contarTiempo(timer1) {
-    timer = timer1;
+function contarTiempo() {
+    timer
     timerInicial
     // timer = tiemposPorNivel[nivelActual];
     // timerInicial = tiemposPorNivel[nivelActual];
@@ -64,11 +64,11 @@ function contarTiempo(timer1) {
     }, 1000);
 }
 
-function siguienteNivel() {
-    clearInterval(tiempoRestanteId);
-    nivelActual++;
-    contarTiempo();
-}
+// function siguienteNivel() {
+//     clearInterval(tiempoRestanteId);
+//     nivelActual++;
+//     contarTiempo();
+// }
 
 function bloquearTarjetas() {
     for (let i = 0; i <= 15; i++) {
@@ -107,10 +107,10 @@ volumeSlider.addEventListener('input', function () {
 });
 
 // Funcion principal
-function destapar(id, timer1) {
+function destapar(id) {
 
     if (temporizador == false) {
-        contarTiempo(timer1);
+        contarTiempo();
         temporizador = true;
     }
 
