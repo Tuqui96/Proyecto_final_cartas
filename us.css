@@ -17,6 +17,10 @@
     margin-left: calc(-.0 * var(--bs-gutter-x));
 }
 
+#nombre-web.h2 {
+    font
+}
+
 .us-text {
     width: 600px;
     max-width: 100%;
@@ -39,7 +43,6 @@
 }
 
 .box {
-    width: 1290px;
     /* max-width: 99%; */
     margin: 0 auto;
     display: flex;

@@ -12,12 +12,18 @@ a {
 header {
     display: flex;
     min-height: 75px;
-    /* background-image: linear-gradient(to right, rgb(134, 239, 172), rgb(59, 130, 246), rgb(147, 51, 234)); */
-    background-image: linear-gradient(to right top, rgb(139, 92, 246), rgb(253, 186, 116));
+
+    background-color: rgba(255, 255, 255, 0.142);
 
     justify-content: space-between;
     align-items: center;
     padding: 10px;
+    box-shadow: 0 0 15px -1px rgb(0 0 0 / 27%);
+
+}
+
+header.entry-header {
+    display: none;
 }
 
 .logo {
@@ -39,7 +45,6 @@ nav ul {
     padding: 0;
 }
 
-#instructions,
 
 #volume-link {
     display: flex;
@@ -104,7 +109,7 @@ nav a {
 }
 
 nav a:hover {
-    background-image: linear-gradient(100deg, #84d0ff 0, #92cdff 5.56%, #a0caff 11.11%, #aec7ff 16.67%, #bbc4ff 22.22%, #c8c1ff 27.78%, #d4beff 33.33%, #dfbbff 38.89%, #e9b8f9 44.44%, #f2b5f2 50%, #fab3ea 55.56%, #ffb1e2 61.11%, #ffafd9 66.67%, #ffaed1 72.22%, #ffadc8 77.78%, #ffadbf 83.33%, #ffaeb6 88.89%, #ffafad 94.44%, #ffb1a5 100%);
+    background-image: radial-gradient(at right center, rgb(56, 189, 248), rgb(49, 46, 129));
     background-clip: text;
     -webkit-background-clip: text;
     -moz-background-clip: text;
@@ -127,6 +132,11 @@ nav a:hover {
 #game-container {
     width: 600px;
     margin: 0 auto;
+}
+
+html {
+    background: rgb(63, 94 251);
+    background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
 }
 
 body {
@@ -233,11 +243,10 @@ a {
     text-decoration: none;
 }
 
+
 img {
     width: 80%;
 }
-
-
 
 /* input[type="range"] {
     background-color: rgb(134, 239, 172);

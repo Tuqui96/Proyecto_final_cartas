@@ -11,12 +11,18 @@
 
 <!--Encabezado-->
 <header>
-    <!--La # sustituirla posteriormente por enlace pantalla bienvenida-->
     <a href="index.html" class="logo">
         <img src="logo1.png" alt="logo pag web">
         <h2 class="nombre-web">Emparejados</h2>
     </a>
+    <a class="nav-link" id="volume-link">
+        <img src="volumen.png" alt="icono volumen">
+    </a>
+    <div id="volume-control" style="display: none;">
+        <input type="range" id="volume" min="0" max="1" step="0.1" value="1">
+    </div>
     <nav class="nav-main1">
+
         <nav class="nav-main">
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -25,12 +31,7 @@
                 <li><a href="us.html">Nosotros</a></li>
             </ul>
         </nav>
-        <a class="nav-link" id="volume-link">
-            <img src="volumen.png" alt="icono volumen">
-        </a>
-        <div id="volume-control" style="display: none;">
-            <input type="range" id="volume" min="0" max="1" step="0.1" value="1">
-        </div>
+
     </nav>
 </header>
 
