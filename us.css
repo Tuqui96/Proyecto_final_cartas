@@ -17,8 +17,12 @@
     margin-left: calc(-.0 * var(--bs-gutter-x));
 }
 
-#nombre-web.h2 {
-    font
+.nav-main {
+    padding: 19px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 19px;
+    border-radius: 15px;
 }
 
 .us-text {
@@ -30,11 +34,19 @@
 .mi-header a {
     color: white;
     text-decoration: none;
+    font-weight: bold;
+    font-family: sans-serif;
+
 }
 
 .mi-header h2 {
+
     color: white;
     text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: sans-serif;
+    padding-top: 8px;
 }
 
 .col-lg-2 {

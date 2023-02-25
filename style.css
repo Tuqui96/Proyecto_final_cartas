@@ -89,8 +89,10 @@ nav ul {
     align-items: center;
     background-color: #F2F2F2;
     background-image: linear-gradient(100deg, #84d0ff 0, #92cdff 5.56%, #a0caff 11.11%, #aec7ff 16.67%, #bbc4ff 22.22%, #c8c1ff 27.78%, #d4beff 33.33%, #dfbbff 38.89%, #e9b8f9 44.44%, #f2b5f2 50%, #fab3ea 55.56%, #ffb1e2 61.11%, #ffafd9 66.67%, #ffaed1 72.22%, #ffadc8 77.78%, #ffadbf 83.33%, #ffaeb6 88.89%, #ffafad 94.44%, #ffb1a5 100%);
-    padding: 20px;
-
+    padding: 19px;
+    padding-left: 20px;
+    /* padding-bottom: 18px; */
+    padding-right: 20px;
     border-radius: 15px;
 
 }
